@@ -1,48 +1,89 @@
+
 # WeatherSMS !
+
+  
 
 An app that send you SMS to your phone number from your city using the Weather API and Twilio!
 
-![enter image description here](https://pbs.twimg.com/media/Fmc5LlXWYAMZUWe?format=png&name=small)
+  <img  src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Twilio-logo-red.svg/512px-Twilio-logo-red.svg.png?20190613203915" alt="Markdown Monster icon" width="20%"/>
+  <img  src="https://blog.weatherapi.com/wp-content/uploads/2020/02/cropped-Asset-62-1.png" alt="Markdown Monster icon" width="20%"/>
 
-![enter image description here](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Twilio-logo-red.svg/512px-Twilio-logo-red.svg.png?20190613203915) 
-![enter image description here](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAACfCAMAAABX0UX9AAAAxlBMVEX////iIyj8/////v/gAADiDxjiICbunZ7hCBPiGyHpWVnxsq/6///wq6rhJSn54eDzvrzvpab68fHsion97/LdAADhAA3rgoT8//zlAADjOTz519TshX/rg4H79/biGB7oenrvn5nlUE356ObwtrHmZ2n119TiREPxxMLtlJDplpX78uznYmP00MztoZ304t7rdXLkXlnkMTXtrK/lOj/qvbfmbGfnjY/11c3odXjphov4zMntjIXvuLn75urlRkroWFXnZ2ABmbXEAAARPElEQVR4nO1de1/iuBouSRpTCRXwNBN0bdEqoAgqOs7OctzZ+f5f6iSlpbmVy+LMnF3z/LG/ndpL+vTNe08IAg8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8Pj38qYMDdh+HPHsk/ExCAIEjz0eSt/fzcbndneR8IBOBXD+yfAT7qDK9aCDFSgDEUjW+OltPVX70MNgACToP+9U2MSBbhlgKMo5CFx/MHQClwTm2PgAag+33AslbccgC3cIjGnSnwc9gCgByC/h2W3MXYxV5BYIwZGZ4IPQg9hyogp9NTQhp40xCimxH1IqiD30Vhk9SZyNjj1JuQGpDOztiu5BUSSObUW5AK6SOKnOaiCRiz8cmvHvX/BSCko4WYt3vRJ06OyDMQgchH14Eg6LCo0dhukkD0FXxwDSiF5xMSHp3FTeEqV8A4tk+JW2QsgrkPTCCkkH8PXaIlggyWnT09Dn97vB9jwohTN2Zx/pGnL4f82OHrRSI+O5rkVJ4iyaH9884rRpk9w6NoRD+s9IkY99iQPTGPCfne7a/+Xp1X/Hd2gVnUwroURvjhw05fAGz2WHTXbwgpKG+PETZEMGtNf/Ko/18Ag6E+c2OcsR4PGqajcFMAmCwM9zrOFumOERyE7yim1iOBUEWOg9axd9PV9IiZOm+Ybrk5oJ0sMuTvmO72PE75+5kZiwUgVJF5TAiC/cj3GsQS6YIULmaOr2oMMqD5vcE6O93pceLSUfe9+AMn846O55QHo55+bJ4DmBvndXr9d3g+BP1IS4li9JgGu7nBPRSpQUrMJhunLyzS/3x2+oKSd4v0viKiIzkH4Irpx9BRAC7NE9H1O3xDTp8yJdbAeDDfcQ6KT7/UJzDO0k2sAwDSycWChRi/H33DyLBhSNB3bOiV8CgILk2/lrQPpk+87fVACyTQ590rQRA8xEL+6suzVwAcBMKVikrfXkOWycDlR9KX/Ez6wFS9K8Zostf1oL+IVA9QXO6QXQAp/bPzxJLK4X5X+gxWkvPgp9HH6VCNITDr7pc+hjTHylBxtOAO8YO89y0hipj8W+gDJ0i9I+pVd4Rc2nVZzFCNCChrv4DXVv9E8xlJz/YWhXVK9Pf5sZP359FHv6sPIp+qdwfCsTtvH/UmKdXooJTPOkedCadrf4t+Vr+AsB6Ox/SRPvJ/h/RBMBoo7xR9qyYeD9LbELEwZOh+FNTBLEg/EUTCEKHXPFjP0i9M0X7kTnj95oN+JH2ZRd9PMh3i/W9UhUTW70R/j0n5hwjdlgIo9P8krDRlNuisy+R8rI4Wp3Yg8DPpY6Nd6bt2eQl7gOdIMZtkXr02mKlpPTYsj9PrpE4UxOhybWNHicIMa1u290fS9xWFOhr9PuvEg3XfrfJFokUpTpDneqmS9VZn62ZG9RAvsvozRGPLcfyB9IHZp1MdX1IXfQA8XOjn/fFHftijIVWtFqoiLg6+Ez2ZN1jlosZGu0tYKkURTKjRLzr5mZPXgkwIOaTP4ZAdKHxgqbxV9I2Wt+MPxsu2wiIXsEyMFJWY7SulGIA7xXvJ/muNKzXviJrpqxRSg16C5ltb34pTB33UVshGi9PKQ0tPJm/t9tvkvMgnbM6sXShzl31eH56bShZj6ev9Zirp6Go9pKky3aOFOig6aT9f98xsbHbZbkBeiUn/9DcFy9J/AmDSdGWJJXU7LvzaOPFNIxRyyienY4YYk614DC0e23lTynM1FDVVsKhbSb+brlQL5WJKn1klDrSeEVQxgHEyUp4RJIQQuwoVEjcGx6VQ0DuUZaWSF/8Tr6QHgj8TwhquXTUhZoA7J++JkXEJkZawoienLSQzINVb4oyx+0lj+gQGI0VjkaPaio8t+gQhPLBbX9Cf64eP6umJybyeeSAw560OM+cv3O7VJ6FX2igGq0/CwbWeZIzNseI4cEvfiaVA/rOmAoD8q6sClrGzZdBQwwE9RWGRh5rnF4s+JgfvoG9tu7jKeXZcay4hfdagtLc9Mx6GZqsLc/268LK84aOuQvCLyf/+9AnBvkwyZ4cAjpObvtvGgJu1cycCjloqqfnwWPAEIFjYQrkO0GBwV09QHNeB2zbpi56OjVT35WqwbV3KRERUTA+wME6/DXUvYV/65E37x8yu/heIcRxmk4DbgRQPFGUW3im03lqmI5JB8KNJXzRWvIFzZXSsdl22SV90P9fLVNHTquPjxjBUSWFTwInGKsZnE3YgfRScYEswtDuiDnCY4Gk9EsxmCn3Wg8JPFEDaNQbaIj31dooWY2+K9G2h76+HgX6ESNMBuOEliQi10C4djb44PJ0YBZf9pW8U4c1tUTFyJOD5TJUXJU9iz95kpeNMNcWmqlJQJmF4q2jbLfRdBca8kcoP8iUzT/xe3PNGrw6wWZfolwv6nJa3iT5Z6tk4wuLUa4u+4LqeNdGZQgSHuV7DZberv840iYhFzAgVz/O2nm3Zq3K7rfRd6NpLcO9yMoVUipty3TziiB9KH3+xnuTAQPHFSigpiOhROQ456Faly6IJ/L4UXTpHyrDYBQ3UlIXyNfDVPvR1dUHLZNoM2HaQyTLCSK+pRjeBg749Ji8PhmSHhkaMF1YP7UVNe/HFawD6OSzdlDhCQ76qXwhRa6OsfFg0+GJ05Sq6AJ/tQ19qOFxIeH7Wu8rIkYoPqL8suwaH0UfPNzsGa5BbU/0paiTsaH+BEPSHMlsaksF4AsrQBUrv8nV1GF2NTGuk2EThueyh+3QjG7eSJQjmdr+XEAAe3Ou8hNMDpQ982674VrdFU8P7U4aimMo10u7d6ZeOFdr3r29Pv7QduR41q0IqSyQUAZJdlcZgYlxB+HNBW+cqFKr2yn4rnIwA1610JPzzw+ibOBrhsT1egexTM31oYjvWHFA5jU2HZ7Uk0NFN31dUGKvCSXH18dnLmRXH4LMSi1Mh0kQbr3Dhp66FJSLwmOkUkDk4cPIeW3YDhyyOGbEJDI0ijip9S2dc4nC2he/PuaOFSUiri75VBw/YkLCSH2OsV8vC/rXptsj3EvP8TqM1ZifBQfQBw8UQljKLO3ma5s+trKVbL8wM50Wlz1EcLwyG3TQgX9dMldn06V9qW7r01shuz6wCRnnXK/2NzgLn5N3ZcQEdozGvFR6XXYrpPdGd6Ti70TOuKn1dBx2F7nswD/e7t3+4dZ9iI8L96Bvpf84uzlzstcJ5y/YQD/L7Xo3zhMsAVq3I3IodcKyL0gbLCzTLCyrLG1DF8lJDMJUctZoz2IW+wNA0DdYQ69MpLpIzB+k+I//QQuf1mHJTgSBdZpr9Pk4/rzOc0u8rU5XC70tUv09XgDPFcTnT/rKdvgtnV78NTfhwGBxIn6mSo2+KpaRDY1CGhlOijqwp6pDjEVFHmQCeq3XNIupQLlMyTNKZ24c+asb9DdAdiuhRyv8h9JmHwiN1RpmDIm3tndT3VcMEAHM93eGOeVuordVflDRX9roffYDvRp8OVrSoHkLfudkeq8nXieHwk2f1r2rGJSaqsrK0JnJlXEQwPFUtsJpxudP14vZC5f2Ozr82qpS7pW9n0zEz6Zupg86NC3T61HzfOkUuARvzfcZh0lNnr5bv0wPEbfRB0NlR+dWIo/viGx0gfX3DC5fjVj67eQHTJq+WbSY7ZJstZywaK2m9hmzzTvTxYLo5MnaBdIoa7yGT1yxoZ7+po3ozdZ/Wzw6BEqoryt5d6xCnW0WtFlrPXb3W0TLiG4s+zUMoQjtHkFveqwliTIfqvtTMVGdVd5gQbHpjqrBzbU6BnpL9+XuVtj/ru+mVNrhZ97WYRp9L4qsXbzfsq4DL4tYh9FGzdB1elt4spHRk6SqtLmzUeS/r6o6zzuukb10pBUadd4v0YXJknDIyX656BG+wKlVx66CY16h6Cmu4rCKz1BSiuvuxguKF4sU6ogP2gOVEcXQZsHWLrtpl0EJWZntqDh1HD0VEDfK87EsyA4ByzPfgmThncDICh9NniTaWPZNcUPFwZmh6HH4x6Tu8x6W6YWOPSwN9gr//vk3e5k+oah68cGYJhKuaD1x/wAt6uPQFfTsxRcbz5fn1I3PPQG1OLdW2xm/lniyQPyCj0lB1WJlP6pWKgmsdVuHp9g4r8ZYhISzE2UVxAqRmvXZ1FssbrIowkvxw+qycgTCTmLBELrg1/qBFFuWY3f199EavKGBnf5+wUxyWelbv73uwesGaWw2yT6uhBGnoqLZGx+JWRw6rgtHkPaTPzL9uAHIk5N3dpcDoLk3K5Qoneplr3V3Kg6HeXWp+Jkgbt5go6RN3ujdXGMjX7gWO95buTJjSw3Wf0Nn3u5Qp5Vu9WFMKUhGXKDkApbeZKaKQVOoJfFYXQaO7nXuboZgkDfxV9AWBK/Bg0rsGjuxf9L267DD6oNUK6gSO0cwqW8hOEmdnPafncaXMouQOrDIuemc96qxNtdZZjx2d9TCYN1VTa/pyO/BY+Qr01CIWk3Xm/CD6pNZ26VwL5MLuwhcH1HUdwpJWLZxBsa6DhMRa13FBVodflc7LL6rmEw6kI5NvZi/WqOkDZquZdCDlJ6KWzVq3jRwsfeLcv8yqhg0cjbmzS81YVXRRzTu5iO+8c9mb9LVVRQDUq4qqU61VRa49rUBTUKbQd2d28MZsZYS49XpKXvPQJg2YnpnL4k3EUdx3d5kC3RyYa9rMUhHkK0Gk6po2LbipF4fomCD37k4KfVbgIXwFqQeEZbJWtNRxzcEtQmB6tjHdg1tRnNslxwKcftUWpCrO826A2orKllxR6TyN3odb6Au44WvFWVVCmCDjWnSyfsyhk1eg/y10FcbLUeDwpd+8hKGvU7/net5gaq7ntQvrEgD27eZUgz4wNJtdKj/faPaLo5e6TvAO9EF+YXYT1oiSYfMOIWJyqKvJ48Kb232lF31oKavJcdNq8mLWTxeObRXjbFifZORjcWs9arO15bQe4zvQJ63TQt7Gnh+YxI4argIuPEd1gUKEGrSXi71lqPpz8ca9DED6FRlKRlyAlBrfVHdhw3p5jd51gJNlfdG70McB78TM8qAzFs/55s2l5E4aysyPW3Gyy04aULo3PYTVmRuLSKp5GwkxA0Y3IQvLp+EoI6g1HHHliidt6QUarW14P9GXbijp2K6xXIOFgIMr4yCS9CX6MZLU9Mk9XXj3Xtw5KneRkxssk6c3vsPetkvju4SLGeBbttPgAPT/xj4u0+7pU0wShFh89dgZ6ZvtAH2rle76u3Mw0/7ye30ZTOc9HRMg93HRMc8hgM/GQXtBZX9y+rRgCRqI4T2dds2WtAY4dhG6SLfQB2jvb+wiJJ1gAHiappxTQE0zY6jotbcADVdS+TeXSUMNcjs47jgIzWN28xgXQ+LpNM/7XNyX7mwEvjr3sGowOIftYVXvjQC2/XZA/VdjBqnPkXfRwOVt9UOrZYTGMYeNq8MruHrN7a+zusyxg1p2mdMG/tJnewe1COdbFiD+WyFoduzf1yLkvuvY5ikt9+8z2ItOdt586F8HuXukI3KRu0fOl8XukUXfFih2j0wado/81S/x61DsXeqsCEak3Lt0WO5dmrlir2Lv0g85cwsUv2DyaeCoSssDcufcLCt3znVFN3LnXEcj74cCAH9/3+YPPHErCAMycoWlG1HuGv6OW1n+k7H3nvUtv2e9gr1/MSGTv5jgBU/Brr/XgWP/ex0Wyl+L2YVA/2sxNsrfKhIxW7zpt4qEwSh+qwh6k2GDyuTXQDLoJi8ig3Fn2hARe0DAAzC9vmklG36nDXj6GlEma4xfCUxQ9nJztEyrczw2AgIaAPkblder36j8PU/lekD/G5U7wrny1LG5poeHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh8cvxf8A+LtVfPnvZpsAAAAASUVORK5CYII=)
+![screenshot from my cellphone](https://pbs.twimg.com/media/Fmc5LlXWYAMZUWe?format=png&name=small)
+
+
+
+
+
+  
 
 ### Table of Contents
-  * [Installation and usage](#installation)
-  * [Libraries](#libraries)
+
+* [Installation and usage](#installation)
+
+* [Libraries](#libraries)
+
+  
 
 ## <a name="installation"></a> Installation and usage
 
-Make sure you have: 
+  
 
-|                |CMD                          |Description                       |
+Make sure you have:
+
+  
+
+| |CMD |Description |
+
 |----------------|-------------------------------|-----------------------------|
-|Twilio          |`pip install twilio`            |For SMS            |
-|Pandas          |`pip install pandas`            |For Dataframe            |
-|tqdm			 |`pip install tqdm`			  |For progressbar|
+
+|Twilio |`pip install twilio` |For SMS |
+
+|Pandas |`pip install pandas` |For Dataframe |
+
+|tqdm |`pip install tqdm` |For progressbar|
+
+  
 
 ## <a name="libraries"></a> Libraries
-  * [twilio-rest](https://github.com/twilio/twilio-python)
-  * [twilio-config](https://github.com/twilio/twilio-python)
-  * [tqdm](https://github.com/tqdm/tqdm#readme)
 
+* [twilio-rest](https://github.com/twilio/twilio-python)
 
+* [twilio-config](https://github.com/twilio/twilio-python)
 
+* [tqdm](https://github.com/tqdm/tqdm#readme)
 
+  
+  
+  
+  
+  
 
 # twilio_config.py
 
+  
+
 twilio_config.py will be the file that connect your app with twilio.
 
+  
+
 ```console
+
 TWILIO_ACCOUNT_SID ='abcdabdcabcdabdcabcdabdcabcdabdc'
+
 TWILIO_AUTH_TOKEN ='abcdabdcabcdabdcabcdabdcabcdabdc'
+
 PHONE_NUMBER ='+123456789101112'
+
 API_KEY_WAPI = 'abcdabdcabcdabdcabcdabdcabcdabdcab'
+
 ```
 
-> **NOTE:** You have to buy a **PHONE NUMBER** and you have a free trial of **15 USD**.
+  
 
+>  **NOTE:** You have to buy a **PHONE NUMBER** and you have a free trial of **15 USD**.
 
+  
+  
+  
 
 This project was created only for testing & education purposes.
