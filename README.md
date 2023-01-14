@@ -26,21 +26,13 @@ An app that send you SMS to your phone number from your city using the Weather A
 
 ## <a name="installation"></a> Installation and usage
 
-  
-
 Make sure you have:
 
-  
-
-| |CMD |Description |
-
-|----------------|-------------------------------|-----------------------------|
-
-|Twilio |`pip install twilio` |For SMS |
-
-|Pandas |`pip install pandas` |For Dataframe |
-
-|tqdm |`pip install tqdm` |For progressbar|
+  |        | CMD | DESCRIPTION
+|:--------:| -------------:| -------------:|
+| Twilio | `pip install twilio` |For SMS |
+| Pandas | `pip install pandas` |For Dataframe |
+| tqdm   | `pip install tqdm` |For progressbar|
 
   
 
@@ -67,19 +59,11 @@ twilio_config.py will be the file that connect your app with twilio.
   
 
 ```console
-
 TWILIO_ACCOUNT_SID ='abcdabdcabcdabdcabcdabdcabcdabdc'
-
 TWILIO_AUTH_TOKEN ='abcdabdcabcdabdcabcdabdcabcdabdc'
-
 PHONE_NUMBER ='+123456789101112'
-
 API_KEY_WAPI = 'abcdabdcabcdabdcabcdabdcabcdabdcab'
-
 ```
-
-  
-
 >  **NOTE:** You have to buy a **PHONE NUMBER** and you have a free trial of **15 USD**.
 
   
